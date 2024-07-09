@@ -1,144 +1,281 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
-import { InputTextarea } from 'primereact/inputtextarea';
-import { Dropdown } from 'primereact/dropdown';
+import React from 'react';
 
 const FormLayoutDemo = () => {
-  const [dropdownItem, setDropdownItem] = useState(null);
-  const dropdownItems = useMemo(
-    () => [
-      { name: 'Option 1', code: 'Option 1' },
-      { name: 'Option 2', code: 'Option 2' },
-      { name: 'Option 3', code: 'Option 3' },
-    ],
-    []
-  );
-
-  useEffect(() => {
-    setDropdownItem(dropdownItems[0]);
-  }, [dropdownItems]);
-
   return (
-    <div className="grid">
-      <div className="col-12 md:col-6">
-        <div className="card p-fluid">
-          <h5>Vertical</h5>
-          <div className="field">
-            <label htmlFor="name1">Name</label>
-            <InputText id="name1" type="text" />
+    <div className="sm:grid sm:grid-cols-2 gap-4 pb-5">
+      <div className="card sm:col-span-1">
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+          <h5 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+            Vertical
+          </h5>
+          <div className="mb-4">
+            <label
+              htmlFor="name1"
+              className="block text-gray-700 dark:text-gray-300 mb-2"
+            >
+              Name
+            </label>
+            <input
+              id="name1"
+              type="text"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+            />
           </div>
-          <div className="field">
-            <label htmlFor="email1">Email</label>
-            <InputText id="email1" type="text" />
+          <div className="mb-4">
+            <label
+              htmlFor="email1"
+              className="block text-gray-700 dark:text-gray-300 mb-2"
+            >
+              Email
+            </label>
+            <input
+              id="email1"
+              type="text"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+            />
           </div>
-          <div className="field">
-            <label htmlFor="age1">Age</label>
-            <InputText id="age1" type="text" />
+          <div className="mb-4">
+            <label
+              htmlFor="age1"
+              className="block text-gray-700 dark:text-gray-300 mb-2"
+            >
+              Age
+            </label>
+            <input
+              id="age1"
+              type="text"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+            />
           </div>
         </div>
-
-        <div className="card p-fluid">
-          <h5>Vertical Grid</h5>
-          <div className="formgrid grid">
-            <div className="field col">
-              <label htmlFor="name2">Name</label>
-              <InputText id="name2" type="text" />
+      </div>
+      <div className="mb-8 sm:col-span-1">
+        <div className="card p-4">
+          <h5 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+            Vertical Grid
+          </h5>
+          <div className="flex gap-2">
+            <div className="mb-4 sm:w-1/2">
+              <label
+                htmlFor="name1"
+                className="block text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Name
+              </label>
+              <input
+                id="name1"
+                type="text"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+              />
             </div>
-            <div className="field col">
-              <label htmlFor="email2">Email</label>
-              <InputText id="email2" type="text" />
+            <div className="mb-4 sm:w-1/2">
+              <label
+                htmlFor="email1"
+                className="block text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Email
+              </label>
+              <input
+                id="email1"
+                type="text"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="card p-4">
+          <h5 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+            Horizontal
+          </h5>
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <label
+                htmlFor="name3"
+                className="text-gray-700 dark:text-gray-300 mr-4 w-16"
+              >
+                Name
+              </label>
+              <div className="flex-1">
+                <input
+                  id="name3"
+                  type="text"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+                />
+              </div>
+            </div>
+            <div className="flex items-center">
+              <label
+                htmlFor="email3"
+                className="text-gray-700 dark:text-gray-300 mr-4 w-16"
+              >
+                Email
+              </label>
+              <div className="flex-1">
+                <input
+                  id="email3"
+                  type="text"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="col-12 md:col-6">
-        <div className="card p-fluid">
-          <h5>Horizontal</h5>
-          <div className="field grid">
-            <label htmlFor="name3" className="col-12 mb-2 md:col-2 md:mb-0">
-              Name
-            </label>
-            <div className="col-12 md:col-10">
-              <InputText id="name3" type="text" />
-            </div>
-          </div>
-          <div className="field grid">
-            <label htmlFor="email3" className="col-12 mb-2 md:col-2 md:mb-0">
-              Email
-            </label>
-            <div className="col-12 md:col-10">
-              <InputText id="email3" type="text" />
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <h5>Inline</h5>
-          <div className="formgroup-inline">
-            <div className="field">
+      <div className="card sm:col-span-1">
+        <div className="formgroup-inline p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+          <h5 className='className="text-lg font-semibold mb-4 text-gray-900 dark:text-white"'>
+            Inline
+          </h5>
+          <div className="flex flex-wrap gap-2">
+            <div className="">
               <label htmlFor="firstname1" className="p-sr-only">
                 Firstname
               </label>
-              <InputText id="firstname1" type="text" placeholder="Firstname" />
+              <input
+                id="firstname1"
+                type="text"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+                placeholder="Firstname"
+              />
             </div>
             <div className="field">
               <label htmlFor="lastname1" className="p-sr-only">
                 Lastname
               </label>
-              <InputText id="lastname1" type="text" placeholder="Lastname" />
+              <input
+                id="lastname1"
+                type="text"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+                placeholder="Lastname"
+              />
             </div>
-            <Button label="Submit"></Button>
-          </div>
-        </div>
-
-        <div className="card">
-          <h5>Help Text</h5>
-          <div className="field p-fluid">
-            <label htmlFor="username">Username</label>
-            <InputText id="username" type="text" />
-            <small>Enter your username to reset your password.</small>
+            <button
+              label="Submit"
+              className="items-end justify-end px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>
-
-      <div className="col-12">
-        <div className="card">
-          <h5>Advanced</h5>
-          <div className="p-fluid formgrid grid">
-            <div className="field col-12 md:col-6">
-              <label htmlFor="firstname2">Firstname</label>
-              <InputText id="firstname2" type="text" />
+      <div className="card sm:col-span-1">
+        <div className="field p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+          <h5 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+            Help Text
+          </h5>
+          <label
+            htmlFor="username"
+            className="block text-gray-700 dark:text-gray-300 mb-2"
+          >
+            Username
+          </label>
+          <input
+            id="username"
+            type="text"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+            placeholder="Enter username"
+          />
+          <small className="text-gray-500 dark:text-gray-400 block mt-1">
+            Enter your username to reset your password.
+          </small>
+        </div>
+      </div>
+      <div className="card sm:col-span-2">
+        <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+          <h5 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+            Advanced
+          </h5>
+          <div className="formgrid grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="field">
+              <label
+                htmlFor="firstname1"
+                className="block text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Firstname
+              </label>
+              <input
+                id="firstname1"
+                type="text"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+                placeholder="Enter firstname"
+              />
             </div>
-            <div className="field col-12 md:col-6">
-              <label htmlFor="lastname2">Lastname</label>
-              <InputText id="lastname2" type="text" />
+            <div className="field">
+              <label
+                htmlFor="lastname1"
+                className="block text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Lastname
+              </label>
+              <input
+                id="lastname1"
+                type="text"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+                placeholder="Enter lastname"
+              />
             </div>
-            <div className="field col-12">
-              <label htmlFor="address">Address</label>
-              <InputTextarea id="address" rows={4} />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="address"
+              className="block text-gray-700 dark:text-gray-300 mb-2"
+            >
+              Address
+            </label>
+            <textarea
+              id="address"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+              rows="4"
+              placeholder="Enter address"
+            ></textarea>
+          </div>
+          <div className="formgrid grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="field">
+              <label
+                htmlFor="city"
+                className="block text-gray-700 dark:text-gray-300 mb-2"
+              >
+                City
+              </label>
+              <input
+                id="city"
+                type="text"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+                placeholder="Enter city"
+              />
             </div>
-            <div className="field col-12 md:col-6">
-              <label htmlFor="city">City</label>
-              <InputText id="city" type="text" />
-            </div>
-            <div className="field col-12 md:col-3">
-              <label htmlFor="state">State</label>
-              <Dropdown
+            <div className="field">
+              <label
+                htmlFor="state"
+                className="block text-gray-700 dark:text-gray-300 mb-2"
+              >
+                State
+              </label>
+              <select
                 id="state"
-                value={dropdownItem}
-                onChange={(e) => setDropdownItem(e.value)}
-                options={dropdownItems}
-                optionLabel="name"
-                placeholder="Select One"
-              ></Dropdown>
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+              >
+                <option value="Select">Select</option>
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+              </select>
             </div>
-            <div className="field col-12 md:col-3">
-              <label htmlFor="zip">Zip</label>
-              <InputText id="zip" type="text" />
+            <div className="field">
+              <label
+                htmlFor="zip"
+                className="block text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Zip
+              </label>
+              <input
+                id="zip"
+                type="text"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 hover:border-blue-400 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:focus:border-blue-500 dark:focus:ring-blue-200 dark:hover:border-blue-400"
+                placeholder="Enter zip code"
+              />
             </div>
           </div>
         </div>
